@@ -14,12 +14,28 @@ var special = ["!", "@", "#", "$", "%", "^", "&", "*", "(", ")"];
 // this is the generatePassword function that's called when you click the button
 function generatePassword() {
   // ask criteria questions
-  window.alert("Select password criteria");
+  window.alert("Answer the following questions to generate your secure password.");
   var selectLength = window.prompt("How long do you want your password to be? Must be at least 8 and no more than 128.");
+  // alerting the user to meet the criteria if they didn't already
+  if (selectLength < 8 || selectLength > 128) {
+    alert("Please select a number between 8 and 128!");
+    var selectLength = window.prompt("How long do you want your password to be? Must be at least 8 and no more than 128.");
+  }
   var selectLowercase = window.prompt("Include lowercase letters? Enter YES or NO");
   var selectUppercase = window.prompt("Include uppercase letters? Enter YES or NO");
   var selectNumeric = window.prompt("Include numbers? Enter YES or NO");
   var selectSpecial = window.prompt("Include special characters? Enter YES or NO");
+  // alerting the user to meet the criteria if they didn't already
+  if (selectLowercase != "yes" && selectLowercase != "YES"
+  && selectUppercase != "yes" && selectUppercase != "YES"
+  && selectNumeric != "yes" && selectUppercase != "YES"
+  && selectSpecial != "yes" && selectSpecial != "YES") {
+    alert("Please select at least one type of character!");
+    var selectLowercase = window.prompt("Include lowercase letters? Enter YES or NO");
+    var selectUppercase = window.prompt("Include uppercase letters? Enter YES or NO");
+    var selectNumeric = window.prompt("Include numbers? Enter YES or NO");
+    var selectSpecial = window.prompt("Include special characters? Enter YES or NO");
+  }
   console.log(
     "Length: " + selectLength + " -- " 
     + "Lowercase: " + selectLowercase + " -- " 
@@ -45,6 +61,7 @@ function generatePassword() {
     for (var i of special)
       combinationBuild.push(i);
   }
+
   // checking to make sure it's capturing the right character types
   console.log(combinationBuild);
 
