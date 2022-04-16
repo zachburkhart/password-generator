@@ -2,6 +2,12 @@
 // Get references to the #generate element
 var generateBtn = document.querySelector("#generate");
 
+// Setting up an array for all the possible letters, numbers, and special characters
+var lower = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
+var upper = 
+var number = 
+var special = 
+
 // character types
 // lowercase, uppercase, numeric, special characters
 function selectCriteria() {
