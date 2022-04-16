@@ -28,7 +28,7 @@ function generatePassword() {
     + "Special: " + selectSpecial);
   var combinationBuild = [];
   var completedPassword = "";
-  //gather the responses to generate a password
+  // gather the responses to generate a password
   if (selectLowercase === "yes" || selectLowercase === "YES") {
     for (var i of lower)
       combinationBuild.push(i);
@@ -45,10 +45,16 @@ function generatePassword() {
     for (var i of special)
       combinationBuild.push(i);
   }
+  // checking to make sure it's capturing the right character types
+  console.log(combinationBuild);
 
-console.log(combinationBuild);
+  // returning a completed password
+  for (var i = 0; i < selectLength; i++) {
+    completedPassword += combinationBuild[Math.floor(Math.random() * combinationBuild.length)];
+  }
+  console.log(completedPassword);
+  return completedPassword;
 }
-
 
 // Write password to the #password input
 function writePassword() {
